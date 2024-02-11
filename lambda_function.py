@@ -70,6 +70,8 @@ def grid_maker(src_bucket,dst_bucket,tile_size):
     print(f"Presigned URL: {presigned_url}")
     return presigned_url
 
-if __name__ == "__main__":
-    url = grid_maker(SOURCE_BUCKET,DESTINATION_BUCKET,tile_size)
-    print(url)
+def lambda_handler(event,context):
+    source_bucket = event["SOURCE_BUCKET"]
+    destination_bucket = event["DESTINATION_BUCKET"]
+    
+    return grid_maker(source_bucket,destination_bucket,tile_size=100)

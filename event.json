@@ -1,0 +1,4 @@
+{
+    "SOURCE_BUCKET":"gridsourcebucket",
+    "DESTINATION_BUCKET":"griddestinationbucket"
+}
